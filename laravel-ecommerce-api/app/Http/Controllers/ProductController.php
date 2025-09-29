@@ -25,7 +25,7 @@ class ProductController extends Controller
             'description' => 'required',
         ]);
 
-        $product = Product::create($fields);
+        $product = $request->user()->products()->create($fields);
 
         return $product;
     }
